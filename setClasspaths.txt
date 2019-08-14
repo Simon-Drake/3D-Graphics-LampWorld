@@ -1,0 +1,5 @@
+{
+export PATH=$PATH:/home/simon/jogl2/lib 
+export CLASSPATH=$CLASSPATH:/home/simon/jogl2/jar/gluegen-rt.jar
+export CLASSPATH=$CLASSPATH:/home/simon/jogl2/jar/jogl-all.jar
+}
