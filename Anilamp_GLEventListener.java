@@ -73,7 +73,7 @@ public class Anilamp_GLEventListener implements GLEventListener {
 /*  ***************************************************
   * I declare that the code below this point is of my own writing. 
   * Simon Drake
-  * spdrake2@sheffield.ac.uk
+  * simon.p.drake93@gmail.com
 */ 
 
   // ***************************************************

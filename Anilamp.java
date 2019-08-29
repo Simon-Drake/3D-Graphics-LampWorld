@@ -27,6 +27,8 @@ public class Anilamp extends JFrame implements ActionListener {
   public Anilamp(String textForTitleBar) {
     super(textForTitleBar);
     GLCapabilities glcapabilities = new GLCapabilities(GLProfile.get(GLProfile.GL3));
+
+    // Initialise canvas and camera
     canvas = new GLCanvas(glcapabilities);
     camera = new Camera(Camera.DEFAULT_POSITION, Camera.DEFAULT_TARGET, Camera.DEFAULT_UP);
     glEventListener = new Anilamp_GLEventListener(camera);
@@ -43,6 +45,7 @@ public class Anilamp extends JFrame implements ActionListener {
         fileMenu.add(quitItem);
     menuBar.add(fileMenu);
     
+    // GUI construction
     JPanel p = new JPanel();
       JButton b = new JButton("Light 1");
       b.addActionListener(this);
@@ -78,6 +81,10 @@ public class Anilamp extends JFrame implements ActionListener {
     animator.start();
   }
   
+  /**
+   * Button event listener
+   * @param e
+   */
   public void actionPerformed(ActionEvent e) {
     if (e.getActionCommand().equalsIgnoreCase("Light 1")) {
       glEventListener.switchLight(1);
@@ -109,6 +116,10 @@ class MyKeyboardInput extends KeyAdapter  {
     this.camera = camera;
   }
   
+  /**
+   * Event listener for camera movement
+   * @param e
+   */
   public void keyPressed(KeyEvent e) {
     Camera.Movement m = Camera.Movement.NO_MOVEMENT;
     switch (e.getKeyCode()) {
@@ -123,10 +134,17 @@ class MyKeyboardInput extends KeyAdapter  {
   }
 }
 
+/**
+ * Mouse controller class
+ */
 class MyMouseInput extends MouseMotionAdapter {
   private Point lastpoint;
   private Camera camera;
   
+  /**
+   * Camera constructor
+   * @param camera
+   */
   public MyMouseInput(Camera camera) {
     this.camera = camera;
   }
