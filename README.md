@@ -2,9 +2,10 @@
 
 To run add all classes in gmaths directory to classpath and JOGL library: 
 
+{
+export PATH=$PATH:/home/simon/jogl2/lib 
 export CLASSPATH=.:$CLASSPATH:./gmaths/*
-
-
 export CLASSPATH=.:$CLASSPATH:/home/simon/jogl2/jar/*
+}
 
 Compile and run **Anilamp.java**
